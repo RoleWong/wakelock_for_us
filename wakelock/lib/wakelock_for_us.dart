@@ -1,9 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';
-import 'package:wakelock/src/windows_stub.dart'
-    if (dart.library.io) 'package:wakelock_windows/wakelock_windows.dart';
-import 'package:wakelock_macos/wakelock_macos.dart';
 import 'package:wakelock_platform_interface/wakelock_platform_interface.dart';
 
 /// The [WakelockPlatformInterface] that is used by [Wakelock].
@@ -27,40 +24,24 @@ WakelockPlatformInterface get _defaultPlatformInstance {
   // web.
   if (kIsWeb) return WakelockPlatformInterface.instance;
 
-  if (Platform.isMacOS) {
-    // Assigning the macOS platform instance like this is not optimal.
-    // Ideally, we would use the default method channel instance on macOS,
-    // however, it is not yet entirely clear how to integrate with pigeon.
-    // This should just work fine and the io reference should be tree shaken
-    // on web.
-    return WakelockMacOS();
-  }
-
-  if (Platform.isWindows) {
-    // This does not feel like the correct way to assign the Windows
-    // implementation, however, the platform channels do not have to be used
-    // thanks to the win32 package. See https://github.com/flutter/flutter/issues/52267.
-    return WakelockWindows();
-  }
-
   return WakelockPlatformInterface.instance;
 }
 
-/// Class providing all wakelock functionality using static members.
+/// Class providing all wakelock_for_us functionality using static members.
 ///
-/// To enable the wakelock, you can use [Wakelock.enable] and to disable it,
+/// To enable the wakelock_for_us, you can use [Wakelock.enable] and to disable it,
 /// you can call [Wakelock.disable].
 /// You do not need to worry about making redundant calls, e.g. calling
-/// [Wakelock.enable] when the wakelock is already enabled as the plugin handles
-/// this for you, i.e. it checks the status to determine if the wakelock is
+/// [Wakelock.enable] when the wakelock_for_us is already enabled as the plugin handles
+/// this for you, i.e. it checks the status to determine if the wakelock_for_us is
 /// already enabled or disabled.
-/// If you want the flexibility to pass a [bool] to control whether the wakelock
+/// If you want the flexibility to pass a [bool] to control whether the wakelock_for_us
 /// should be enabled or disabled, you can use [Wakelock.toggle].
 ///
-/// The [Wakelock.enabled] getter allows you to retrieve the current wakelock
+/// The [Wakelock.enabled] getter allows you to retrieve the current wakelock_for_us
 /// status of the device..
 class Wakelock {
-  /// Enables the wakelock.
+  /// Enables the wakelock_for_us.
   ///
   /// This can simply be called using `Wakelock.enable()` and does not return
   /// anything.
@@ -70,7 +51,7 @@ class Wakelock {
   /// * [toggle], which allows to enable or disable using a [bool] parameter.
   static Future<void> enable() => toggle(enable: true);
 
-  /// Disables the wakelock.
+  /// Disables the wakelock_for_us.
   ///
   /// This can simply be called using `Wakelock.disable()` and does not return
   /// anything.
@@ -80,9 +61,9 @@ class Wakelock {
   /// * [toggle], which allows to enable or disable using a [bool] parameter.
   static Future<void> disable() => toggle(enable: false);
 
-  /// Toggles the wakelock on or off.
+  /// Toggles the wakelock_for_us on or off.
   ///
-  /// You can simply use this function to toggle the wakelock using a [bool]
+  /// You can simply use this function to toggle the wakelock_for_us using a [bool]
   /// value (for the [enable] parameter).
   ///
   /// ```dart
@@ -90,7 +71,7 @@ class Wakelock {
   /// Wakelock.toggle(enable: true);
   ///
   /// bool enableWakelock = false;
-  /// // The following line disables the wakelock.
+  /// // The following line disables the wakelock_for_us.
   /// Wakelock.toggle(enable: enableWakelock);
   /// ```
   ///
@@ -101,9 +82,9 @@ class Wakelock {
     return wakelockPlatformInstance.toggle(enable: enable);
   }
 
-  /// Returns whether the wakelock is currently enabled or not.
+  /// Returns whether the wakelock_for_us is currently enabled or not.
   ///
-  /// If you want to retrieve the current wakelock status, you will have to call
+  /// If you want to retrieve the current wakelock_for_us status, you will have to call
   /// [Wakelock.enabled] and await its result:
   ///
   /// ```dart

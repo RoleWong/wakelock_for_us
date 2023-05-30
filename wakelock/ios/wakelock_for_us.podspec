@@ -1,9 +1,9 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint wakelock.podspec' to validate before publishing.
+# Run `pod lib lint wakelock_for_us.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'wakelock'
+  s.name             = 'wakelock_for_us'
   s.version          = '0.0.1'
   s.summary          = 'Plugin that allows you to keep the device screen awake, i.e. prevent the screen from sleeping on Android, iOS, macOS, Windows, and web.'
   s.description      = <<-DESC

@@ -1,6 +1,6 @@
 //
 //  UIApplication+idleTimerLock.h
-//  wakelock
+//  wakelock_for_us
 //
 //  Created by suyao on 2021/12/17.
 //

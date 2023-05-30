@@ -1,11 +1,11 @@
 import 'package:pigeon/pigeon.dart';
 
-/// Message for toggling the wakelock on the platform side.
+/// Message for toggling the wakelock_for_us on the platform side.
 class ToggleMessage {
   bool? enable;
 }
 
-/// Message for reporting the wakelock state from the platform side.
+/// Message for reporting the wakelock_for_us state from the platform side.
 class IsEnabledMessage {
   bool? enabled;
 }
@@ -18,9 +18,9 @@ class IsEnabledMessage {
   objcOptions: ObjcOptions(
     prefix: 'FLT',
   ),
-  javaOut: 'android/src/main/java/creativemaybeno/wakelock/Messages.java',
+  javaOut: 'android/src/main/java/creativemaybeno/wakelock_for_us/Messages.java',
   javaOptions: JavaOptions(
-    package: 'creativemaybeno.wakelock',
+    package: 'creativemaybeno.wakelock_for_us',
   ),
 ))
 @HostApi(dartHostTestHandler: 'TestWakelockApi')
