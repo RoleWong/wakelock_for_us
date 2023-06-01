@@ -1,9 +1,9 @@
-package creativemaybeno.wakelock
+package creativemaybeno.wakelockforus
 
 import android.app.Activity
 import android.view.WindowManager
-import creativemaybeno.wakelock.Messages.IsEnabledMessage
-import creativemaybeno.wakelock.Messages.ToggleMessage
+import creativemaybeno.wakelockforus.Messages.IsEnabledMessage
+import creativemaybeno.wakelockforus.Messages.ToggleMessage
 
 internal class Wakelock {
   var activity: Activity? = null

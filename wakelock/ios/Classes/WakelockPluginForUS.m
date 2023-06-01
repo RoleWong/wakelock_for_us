@@ -1,17 +1,17 @@
-#import "WakelockPlugin.h"
+#import "WakelockPluginForUS.h"
 #import "messages.h"
 #import "UIApplication+idleTimerLock.h"
 
 
-@interface WakelockPlugin () <FLTWakelockApi>
+@interface WakelockPluginForUS () <FLTWakelockApi>
 
 @property (nonatomic, assign) BOOL enable;
 
 @end
 
-@implementation WakelockPlugin
+@implementation WakelockPluginForUS
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  WakelockPlugin* instance = [[WakelockPlugin alloc] init];
+  WakelockPluginForUS* instance = [[WakelockPluginForUS alloc] init];
   FLTWakelockApiSetup(registrar.messenger, instance);
 }
 

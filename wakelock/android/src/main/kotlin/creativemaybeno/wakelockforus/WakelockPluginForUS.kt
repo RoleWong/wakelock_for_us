@@ -1,15 +1,15 @@
-package creativemaybeno.wakelock
+package creativemaybeno.wakelockforus
 
 import androidx.annotation.NonNull
-import creativemaybeno.wakelock.Messages.IsEnabledMessage
-import creativemaybeno.wakelock.Messages.ToggleMessage
-import creativemaybeno.wakelock.Messages.WakelockApi
+import creativemaybeno.wakelockforus.Messages.IsEnabledMessage
+import creativemaybeno.wakelockforus.Messages.ToggleMessage
+import creativemaybeno.wakelockforus.Messages.WakelockApi
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 
 /** WakelockPlugin */
-class WakelockPlugin : FlutterPlugin, WakelockApi, ActivityAware {
+class WakelockPluginForUS : FlutterPlugin, WakelockApi, ActivityAware {
   private var wakelock: Wakelock? = null
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {

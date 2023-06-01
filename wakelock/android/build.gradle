@@ -1,4 +1,4 @@
-group 'creativemaybeno.wakelock'
+group 'creativemaybeno.wakelockforus'
 version '1.0-SNAPSHOT'
 
 buildscript {
